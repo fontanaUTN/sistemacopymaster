@@ -10,7 +10,7 @@ exports.register = async (req, res) => {
 	let passwordHaash = await bcryptjs.hash(password, 8);
 
 	if (codigo == '2021'){
-		connection.query('INSERT INTO login SET ?', {nameLogin: name, passwordLogin: passwordHaash, sucursal: sucursal}, async(error, results)=>{
+		connection.query('INSERT INTO login SET ?', {nameLogin: name, passwordLogin: passwordHaash, sucursal: sucursal, ip:'452315'}, async(error, results)=>{
 		 	if(error){
 		 		res.render('registro' , {
 		 			alert:true,
