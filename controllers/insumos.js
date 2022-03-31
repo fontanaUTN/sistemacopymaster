@@ -47,6 +47,10 @@ exports.send = (req, res) => {
 	let year = req.body.fecha.slice(0, 4);
 	let month = req.body.fecha.slice(5, 7);
 	let day = req.body.fecha.slice(8, 10);
+	
+	if (month < 10 ){
+		month = month.slice(-1);
+	}
 
 	const meses = [0,'enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
 	let table = `${req.session.sucursal}insumos`;
