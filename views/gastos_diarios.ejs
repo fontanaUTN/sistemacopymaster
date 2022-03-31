@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google" content="notranslate" />
+	<title>Sistema - Gastos Diarios</title>
+	<link rel="icon" href="resources/images/copymaster.ico">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+</head>
+<body>
+<% if (login) { %>
+	<div class="center-registro centro-gastos__diarios">
+		<h1 class="registro-title">GASTOS DIARIOS</h1>
+		<form action="/gastos_diarios_send" method="POST" class="registro-form">
+			<input type="date" id="fecha" name="fecha" min="2021-01-01" max="2021-12-31" class="input-fecha">
+			<div  class="gastos_inputs">
+				<input type="number" name="gastos1" id="gastos1" placeholder="$" class="registro-input gastos-input">
+				<p class="mas__respuesto" id="mas__respuesto">+</p>
+				<p class="mas__respuesto mas__respuesto_2" id="mas__respuesto_2">-</p>
+			</div>
+			<div class="mas__inputs-resp">
+				<div  class="gastos_inputs">
+					<input type="number" name="gastos2" id="gastos2" placeholder="$" class="registro-input gastos-input">
+					<p class="mas__respuesto mas__respuesto-extra">+</p>
+				</div>
+				<div  class="gastos_inputs">
+					<input type="number" name="gastos3" id="gastos3" placeholder="$" class="registro-input gastos-input">
+					<p class="mas__respuesto mas__respuesto-extra">+</p>
+				</div>
+				<div  class="gastos_inputs">
+					<input type="number" name="gastos4" id="gastos4" placeholder="$" class="registro-input gastos-input">
+					<p class="mas__respuesto mas__respuesto-extra">+</p>
+				</div>
+			</div>
+			<div class="btn-registro">
+				<input type="submit" class="registro-btn" value="ENVIAR">
+			</div>
+		</form>
+		<div class="btn-registro">
+			<a class="registro-btn btn-volver" href="/home_send">VOLVER</a>
+		</div>
+	</div>
+
+	<script>
+		const date = new Date();
+		let year = date.getFullYear();
+		let month = date.getMonth() + 1;
+		month = (month < 10 ? "0" : "") + month;
+		let day  = date.getDate();
+		day = (day < 10 ? "0" : "") + day;
+
+		const inputFecha = document.getElementById('fecha');
+		inputFecha.value = `${year}-${month}-${day}`;
+
+		const btnMasResp = document.querySelector("#mas__respuesto");
+		const btnMasResp2 = document.querySelector("#mas__respuesto_2");
+
+		const divContainer = document.querySelector(".insumos_container");
+		const divReg = document.querySelector(".centro-gastos__diarios");
+		const divInputs = document.querySelector(".mas__inputs-resp");
+
+		btnMasResp.addEventListener('click', verRes, true);
+		btnMasResp2.addEventListener('click', esconderRes, true);
+
+		function verRes() {
+			btnMasResp.style.display = 'none';
+			btnMasResp2.style.display = 'block';
+			divInputs.style.display = 'block';
+			divReg.style.height = '240px';
+		}
+
+		function esconderRes() {
+			btnMasResp.style.display = 'block';
+			btnMasResp2.style.display = 'none';
+			divInputs.style.display = 'none';
+			divReg.style.height = '90px';
+		}
+
+	</script>
+
+<% } else { %>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+	<script>
+			Swal.fire({
+				title: '<%= alertTitle %>',
+				text: '<%= alertMessage %>',
+				icon: '<%= alertIcon %>',
+				background: '<%= background %>',
+				showConfirmButton: <%= showConfirmButton %> ,
+				confirmButtonColor: '<%= confirmButtonColor %>',
+				timer: <%= timer %>
+			}).then(()=>{
+				window.location='<%= ruta %>'
+			})
+	</script>
+<% } %>
+
+	
+	<% if(typeof alert != "undefined") { %>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
+		<script>
+			Swal.fire({
+				title: '<%= alertTitle %>',
+				text: '<%= alertMessage %>',
+				icon: '<%= alertIcon %>',
+				background: '<%= background %>',
+				showConfirmButton: <%= showConfirmButton %> ,
+				confirmButtonColor: '<%= confirmButtonColor %>',
+				timer: <%= timer %>
+			}).then(()=>{
+				window.location='<%= ruta %>'
+			})
+		</script>
+	<% } %>
+</body>
+</html>

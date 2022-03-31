@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google" content="notranslate" />
+	<title>Sistema - Insumos</title>
+	<link rel="icon" href="resources/images/copymaster.ico">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+</head>
+<body>
+<% if (login) { %>
+	<div class="center-registro center-balance" id="container_div">
+		<h1 class="registro-title">CIERRE DE BALANCE</h1>
+		<form action="/balance_mensual_send" method="POST" class="registro-form" id="form">
+			<input type="date" id="fecha" name="fecha" min="2021-01-01" max="2021-12-31" class="input-fecha">
+			<div class="balance__div">
+				<h2 class="balance__items">Anillos</h2>
+				<p class="mas__date" id="anillosOne">+</p>
+				<p class="mas__date menos__date" id="anillosTwo">-</p>
+			</div>
+			<div class="insumos_container" id="container_anillos">
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 7:</label>
+					</div>
+					<input type="number" name="anillo_7" id="anillo_7" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 9:</label>
+					</div>
+					<input type="number" name="anillo_9" id="anillo_9" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 12:</label>
+					</div>
+					<input type="number" name="anillo_12" id="anillo_12" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 14:</label>
+					</div>
+					<input type="number" name="anillo_14" id="anillo_14" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 17:</label>
+					</div>
+					<input type="number" name="anillo_17" id="anillo_17" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 20:</label>
+					</div>
+					<input type="number" name="anillo_20" id="anillo_20" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 23:</label>
+					</div>
+					<input type="number" name="anillo_23" id="anillo_23" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 25:</label>
+					</div>
+					<input type="number" name="anillo_25" id="anillo_25" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 29:</label>
+					</div>
+					<input type="number" name="anillo_29" id="anillo_29" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 33:</label>
+					</div>
+					<input type="number" name="anillo_33" id="anillo_33" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 40:</label>
+					</div>
+					<input type="number" name="anillo_40" id="anillo_40" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 45:</label>
+					</div>
+					<input type="number" name="anillo_45" id="anillo_45" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Anillo Nº 50:</label>
+					</div>
+					<input type="number" name="anillo_50" id="anillo_50" class="input_items" placeholder="Cantidad">
+				</div>
+			</div>
+			<div class="balance__div">
+				<h2 class="balance__items">Hojas</h2>
+				<p class="mas__date" id="hojasOne">+</p>
+				<p class="mas__date menos__date" id="hojasTwo">-</p>
+			</div>
+			<div class="insumos_container" id="container_hojas">
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Hojas A4</label>
+					</div>
+					<input type="number" name="hojas_a4" id="hojas_a4" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Hojas oficio</label>
+					</div>
+					<input type="number" name="hojas_oficio" id="hojas_oficio" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Hojas A3</label>
+					</div>
+					<input type="number" name="hojas_a3" id="hojas_a3" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Hojas color</label>
+					</div>
+					<input type="number" name="hojas_color" id="hojas_color" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Cartulinas</label>
+					</div>
+					<input type="number" name="cartulina" id="cartulina" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Plastificado</label>
+					</div>
+					<input type="number" name="plastificado" id="plastificado" class="input_items" placeholder="Cantidad">
+				</div>
+			</div>
+			<div class="balance__div">
+				<h2 class="balance__items">Marcadores</h2>
+				<p class="mas__date" id="marcadoresOne">+</p>
+				<p class="mas__date menos__date" id="marcadoresTwo">-</p>
+			</div>
+			<div class="insumos_container" id="container_marcadores">
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Máquina 1</label>
+					</div>
+					<input type="number" name="maquina1" id="maquina1" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Máquina 2</label>
+					</div>
+					<input type="number" name="maquina2" id="maquina2" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Máquina 3</label>
+					</div>
+					<input type="number" name="maquina3" id="maquina3" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Máquina 4</label>
+					</div>
+					<input type="number" name="maquina4" id="maquina4" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Máquina 5</label>
+					</div>
+					<input type="number" name="maquina5" id="maquina5" class="input_items" placeholder="Cantidad">
+				</div>
+
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Marc. Negro C280</label>
+					</div>
+					<input type="number" name="negro_c280" id="negro_c280" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Marc. Color C208</label>
+					</div>
+					<input type="number" name="color_c280" id="color_c280" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Marc. Negro C754</label>
+					</div>
+					<input type="number" name="negro_c754" id="negro_c754" class="input_items" placeholder="Cantidad">
+				</div>
+				<div class="insumos_item">
+					<div class="div_label">
+						<label class="label_items">Marc. Color C754</label>
+					</div>
+					<input type="number" name="color_c754" id="color_c754" class="input_items" placeholder="Cantidad">
+				</div>
+			</div>
+			<div class="btn-registro">
+				<input type="submit" class="registro-btn" value="ENVIAR" id="btn_enviar">
+			</div>
+		</form>
+		<div class="btn-registro">
+			<a class="registro-btn btn-volver" href="/home_send">VOLVER</a>
+		</div>
+	</div>
+
+	<script>
+		const date = new Date();
+		let year = date.getFullYear();
+		let month = date.getMonth() + 1;
+		month = (month < 10 ? "0" : "") + month;
+		let day  = date.getDate();
+		day = (day < 10 ? "0" : "") + day;
+
+		const inputFecha = document.getElementById('fecha');
+		inputFecha.value = `${year}-${month}-${day}`;
+
+		//mostrar - esconder
+		const divContainer = document.getElementById('container_div');
+		const form = document.getElementById('form');
+
+		function mostrar(long, element, botton1, botton2) {
+			element.style.display = 'block';
+			botton1.style.display = 'none';
+			botton2.style.display = 'block';
+
+			let height = form.clientHeight - 30;
+			divContainer.style.height = `${height}px`;
+		}
+
+		function esconder(long, element, botton1, botton2) {
+			element.style.display = 'none';
+			botton1.style.display = 'block';
+			botton2.style.display = 'none';
+			
+			let height = form.clientHeight - 30;
+			divContainer.style.height = `${height}px`;
+		}
+
+			//anillos
+		const masAnillo = document.getElementById('anillosOne');
+		const menosAnillo = document.getElementById('anillosTwo');
+		const containerAnillo = document.getElementById('container_anillos');
+
+		masAnillo.addEventListener('click', function() { mostrar('570px',containerAnillo, masAnillo, menosAnillo) })
+		menosAnillo.addEventListener('click', function() { esconder('160px',containerAnillo, masAnillo, menosAnillo) })
+
+			// hojas
+		const masHojas = document.getElementById('hojasOne');
+		const menosHojas = document.getElementById('hojasTwo');
+		const containerHojas = document.getElementById('container_hojas');
+
+		masHojas.addEventListener('click', function() { mostrar('380px',containerHojas, masHojas, menosHojas) })
+		menosHojas.addEventListener('click', function() { esconder('160px',containerHojas, masHojas, menosHojas) })
+
+			// marcadores
+		const masMarcadores = document.getElementById('marcadoresOne');
+		const menosMarcadores = document.getElementById('marcadoresTwo');
+		const containerMarcadores = document.getElementById('container_marcadores');
+
+		masMarcadores.addEventListener('click', function() { mostrar('630px',containerMarcadores, masMarcadores, menosMarcadores) })
+		menosMarcadores.addEventListener('click', function() { esconder('160px',containerMarcadores, masMarcadores, menosMarcadores) })
+
+	</script>
+<% } else { %>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+	<script>
+			Swal.fire({
+				title: '<%= alertTitle %>',
+				text: '<%= alertMessage %>',
+				icon: '<%= alertIcon %>',
+				background: '<%= background %>',
+				showConfirmButton: <%= showConfirmButton %> ,
+				confirmButtonColor: '<%= confirmButtonColor %>',
+				timer: <%= timer %>
+			}).then(()=>{
+				window.location='<%= ruta %>'
+			})
+	</script>
+<% } %>
+
+	
+	<% if(typeof alert != "undefined") { %>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
+		<script>
+			Swal.fire({
+				title: '<%= alertTitle %>',
+				text: '<%= alertMessage %>',
+				icon: '<%= alertIcon %>',
+				background: '<%= background %>',
+				showConfirmButton: <%= showConfirmButton %> ,
+				confirmButtonColor: '<%= confirmButtonColor %>',
+				timer: <%= timer %>
+			}).then(()=>{
+				window.location='<%= ruta %>'
+			})
+		</script>
+	<% } %>
+</body>
+</html>
