@@ -89,6 +89,10 @@ exports.send = (req, res) => {
 
 	let month = req.body.fecha.slice(5, 7);
 	let sucursal = 0;
+	
+	if (month < 10 ){
+		month = month.slice(-1);
+	}
 
 	if(req.session.sucursal == 'habegger'){
 		sucursal = 1;
